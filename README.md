@@ -200,52 +200,6 @@ test/                                  # Test suite (5 categories)
 └── widget/                           # Widget tests
 ```
 
-### Key Services Explained
-
-#### VideoProcessorService / VideoProcessorServiceMobile
-Manages FFmpeg-based video compression. Constructs FFmpeg commands based on settings, monitors progress, and handles platform-specific optimizations.
-
-```dart
-// Example usage
-final processor = ref.watch(videoProcessorProvider);
-await processor.compressVideo(
-  inputPath: '/path/to/video.mp4',
-  outputPath: '/path/to/output.mp4',
-  settings: VideoSettings(
-    preset: CompressionAlgorithm.h265,
-    resolution: VideoResolution.uhd4k,
-    format: VideoFormat.mp4,
-  ),
-  onProgress: (current, total) {
-    print('Progress: $current/$total');
-  },
-);
-```
-
-#### VideoMetadataService / VideoMetadataServiceMobile
-Extracts video metadata using FFprobe: duration, resolution, codec, fps. Generates thumbnails for UI preview.
-
-#### HardwareDetectionService
-Detects device capabilities (CPU cores, RAM, available codecs) for optimization decisions.
-
-```dart
-final hw = ref.watch(hardwareProvider);
-if (hw.supportsH265) {
-  // Use H.265 for better compression
-}
-```
-
-#### FFmpegProgressService
-Real-time progress tracking from FFmpeg output parsing. Converts bitrate/time into percentage completion.
-
-#### NotificationService
-Sends system notifications for compression progress and events.
-
-#### CacheService
-Singleton for in-memory and disk caching (SharedPreferences). Stores thumbnails, metadata, recent files.
-
----
-
 ## Installation & Setup
 
 ### Prerequisites
@@ -327,7 +281,6 @@ Change save directory in Settings > Storage > Change Folder. Custom locations su
 - **Format**: Run `flutter format lib/` regularly
 - **Analysis**: Keep `flutter analyze` warnings at 0
 - **Comments**: Explain *why*, not *what* (code shows what)
-- **Naming**: Descriptive names with suffixes for specialized classes (e.g., `_mobile.dart` for platform-specific)
 
 ### Common Workflows
 
@@ -607,85 +560,10 @@ Contributions welcome! Please:
 
 ---
 
-## FAQ
-
-**Q: How long does video compression typically take?**
-
-Compression time depends on video size, resolution, target codec, and device hardware. A 100MB video may take 2-5 minutes on a mid-range device. Hardware acceleration (H.264/H.265 with MediaCodec) significantly reduces processing time.
-
-**Q: What is the difference between the compression algorithms (VP8, VP9, H.264, H.265)?**
-
-H.265 provides best compression ratio but slower encoding. H.264 balances compression and speed. VP9 offers web optimization. VP8 is older, rarely used. Choose H.265 for maximum size reduction, H.264 for compatibility and speed.
-
-**Q: Will the original video file be deleted after compression?**
-
-No. VCompress saves the compressed video to a new file. Your original remains untouched. You can enable overwrite in Settings if desired.
-
-**Q: Why does my device get hot during compression?**
-
-Video compression is CPU/GPU intensive. On older devices, sustained processing generates heat. This is normal. Reduce target resolution or split large videos into segments to minimize heat generation.
-
-**Q: What permissions does VCompress need and why?**
-
-Storage: Read/write video files. Notifications: Show compression progress. Camera/Microphone: Not required; app doesn't use them. Permissions requested only as needed.
-
-**Q: Can I compress videos in background or while using other apps?**
-
-Yes. VCompress runs compression as a background service. You can navigate away, use other apps, or lock the device. Progress notifications keep you updated.
-
-**Q: Which video formats are supported as input?**
-
-Any format supported by FFmpeg: MP4, MKV, AVI, MOV, FLV, WebM, 3GP, and others. Codecs must be recognized by your device's video decoder.
-
-**Q: How much free storage do I need for compression?**
-
-Temporary space needed during compression is approximately equal to the input file size. Save location must have sufficient space for the output file. Clear app cache if space is low.
-
-**Q: Why is compression slower on Android 7.0 compared to newer versions?**
-
-Android 7.0 lacks some hardware acceleration features available in 8.0+. Software encoding is slower. Update if possible, or reduce resolution/quality for faster processing.
-
-**Q: What should I do if compression fails or gets stuck?**
-
-Check available storage (>200MB recommended). Ensure video file is not corrupted. Restart the app. For persistent issues, report with device info (`flutter doctor` output) and video details.
-
-**Q: Can I compress to multiple formats in one pass?**
-
-No. Each compression creates one output file in one format. For multiple outputs, compress multiple times with different settings.
-
----
-
 ## License
 
 MIT License - See LICENSE file for details.
 
 ---
 
-## Support
-
-### Documentation
-- [CLAUDE.md](./CLAUDE.md) - Development guidelines and architecture decisions
-- [Flutter Documentation](https://flutter.dev/docs)
-- [FFmpeg Documentation](https://ffmpeg.org/documentation.html)
-
-### Issues & Feedback
-- GitHub Issues: [VCompress Issues](https://github.com/roymejia2217/VCompress/issues)
-- Bug Reports: Include `flutter doctor` output and steps to reproduce
-- Feature Requests: Describe use case and expected behavior
-
-## Version History
-
-| Version | Date | Highlights |
-|---------|------|-----------|
-| **2.0.5** | 2026-01-21 | F-Droid compatibility (reproducible builds), disabled DependencyInfoBlock |
-| **2.0.4** | 2025-11-11 | Dependency upgrades, ProGuard rules improvements for F-Droid |
-| **2.0.3** | 2025-11-09 | Enabled ProGuard minification, FFmpeg Kit configuration fixes |
-| **2.0.2** | 2025-11-08 | Added complete Italian (it) localization |
-| **2.0.1** | 2025-11-07 | Maintenance release, localization consistency fixes |
-| **2.0.0** | 2025-11-07 | Initial Release, Material Design 3, Multi-language, Hardware Acceleration |
-
----
-
 **Built with ❤️ using Flutter**
-
-Questions? Open an issue or visit the [GitHub repository](https://github.com/roymejia2217/VCompress).
