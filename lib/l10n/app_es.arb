@@ -50,6 +50,11 @@
   "@italian": {
     "description": "Nombre del idioma italiano"
   },
+
+  "chinese": "Chino",
+  "@chinese": {
+    "description": "Nombre del idioma chino"
+  },
   
   "storage": "Almacenamiento",
   "@storage": {
