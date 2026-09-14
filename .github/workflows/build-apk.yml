@@ -18,11 +18,11 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
-      - name: Set up Flutter (latest stable 3.x)
+      - name: Set up Flutter (stable 3.32.x, 匹配仓库锁定的 Gradle 8.12)
         uses: subosito/flutter-action@v2
         with:
           channel: 'stable'
-          flutter-version: '3.x'
+          flutter-version: '3.32.x'
           cache: true
 
       - name: Set up Android SDK
