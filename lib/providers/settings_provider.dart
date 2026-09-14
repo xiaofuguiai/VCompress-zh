@@ -188,7 +188,7 @@ class AmoledController extends StateNotifier<bool> {
 }
 
 class LocaleController extends StateNotifier<Locale> {
-  LocaleController() : super(const Locale('es')) {
+  LocaleController() : super(const Locale('zh')) {
     _load();
   }
 
