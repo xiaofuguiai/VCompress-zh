@@ -33,6 +33,14 @@ jobs:
           yes | sdkmanager --licenses
           sdkmanager "platform-tools" "platforms;android-34" "platforms;android-35" "build-tools;34.0.0" "build-tools;35.0.0"
 
+      - name: Create CI signing keystore (key.properties for release signing)
+        run: |
+          "$JAVA_HOME/bin/keytool" -genkey -v -keystore "$RUNNER_TEMP/ci_key.jks" -keyalg RSA -keysize 2048 -validity 10000 -alias cikey -storepass cipass -keypass cipass -dname "CN=VCompressCI"
+          echo "storeFile=$RUNNER_TEMP/ci_key.jks" > android/key.properties
+          echo "storePassword=cipass" >> android/key.properties
+          echo "keyAlias=cikey" >> android/key.properties
+          echo "keyPassword=cipass" >> android/key.properties
+
       - name: Flutter pub get
         run: flutter pub get
 
