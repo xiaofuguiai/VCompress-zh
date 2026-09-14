@@ -18,11 +18,11 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
-      - name: Set up Flutter (pinned 3.34.x, 作者原工具链：Gradle 8.12 / AGP 8.7.3 / Kotlin 2.1.0)
+      - name: Set up Flutter (pinned 3.34, 作者原工具链：Gradle 8.12 / AGP 8.7.3 / Kotlin 2.1.0)
         uses: subosito/flutter-action@v2
         with:
           channel: 'stable'
-          flutter-version: '3.34.x'
+          flutter-version: '3.34'
           cache: true
 
       - name: Set up Android SDK
