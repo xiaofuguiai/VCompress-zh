@@ -61,7 +61,7 @@ class VCompressorApp extends ConsumerWidget {
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
       ],
-      supportedLocales: const [Locale('es'), Locale('en'), Locale('fr'), Locale('it')],
+      supportedLocales: const [Locale('es'), Locale('en'), Locale('fr'), Locale('it'), Locale('zh')],
       locale: locale,
     );
   }
