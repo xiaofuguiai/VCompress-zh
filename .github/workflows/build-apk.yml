@@ -18,7 +18,7 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
-      - name: Set up Flutter (pinned 3.41.9: Dart 3.11.5>=3.8.1 满足 sdk 约束; IconData 仍非 final 可编译 phosphor_flutter 2.1.0; >=3.34 满足 flex_color_scheme)
+      - name: "Set up Flutter (pin 3.41.9, Dart 3.11.5 >=3.8.1 meets sdk; IconData non-final so phosphor 2.1.0 compiles; >=3.34 meets flex_color_scheme)"
         uses: subosito/flutter-action@v2
         with:
           channel: 'stable'
