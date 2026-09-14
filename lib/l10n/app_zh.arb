@@ -1,0 +1,149 @@
+{
+  "@@locale": "zh",
+
+  "appName": "VCompress",
+  "appDescription": "压缩视频，不损画质",
+
+  "settings": "设置",
+  "settingsSubtitle": "应用设置",
+
+  "appearance": "外观",
+  "language": "语言",
+
+  "spanish": "西班牙语",
+  "english": "英语",
+  "french": "法语",
+  "italian": "意大利语",
+  "chinese": "中文",
+
+  "storage": "存储",
+  "loadingSettings": "正在加载设置…",
+  "errorLoadingSettings": "加载设置失败",
+  "retry": "重试",
+
+  "saveFolderSemantics": "保存文件夹已设为 {path}",
+  "changeFolderSemantics": "更改保存文件夹",
+  "changeFolderHint": "点击以选择新文件夹",
+
+  "invalidFilesCount": "无效文件：{count}",
+  "view": "查看",
+
+  "light": "浅色",
+  "dark": "深色",
+  "system": "跟随系统",
+
+  "saveFolder": "保存文件夹",
+  "changeFolder": "更改文件夹",
+  "noVideosSelected": "未选择视频",
+  "import": "导入",
+  "processing": "处理中…",
+  "compress": "压缩",
+
+  "configurationTitle": "压缩设置",
+  "configurationBatch": "为 {videoCount} 个视频配置",
+  "preset": "预设",
+  "outputResolution": "输出分辨率",
+  "outputFormat": "输出格式",
+
+  "removeAudio": "移除音频",
+  "mirrorMode": "镜像模式",
+  "squareFormat": "正方形格式",
+  "adjustSpeed": "调整速度",
+
+  "replaceOriginal": "替换原文件",
+  "advancedOptions": "高级选项",
+  "advancedSubtitle": "编辑与技术调整",
+
+  "applyToAll": "应用到全部",
+  "save": "保存",
+
+  "configureVideosNow": "是否现在配置 {videoCount} 个视频？",
+  "useSameConfiguration": "使用相同配置",
+  "configureIndividually": "逐个配置",
+
+  "completed": "已完成",
+  "error": "错误",
+  "fileSize": "文件大小",
+  "duration": "时长",
+  "resolution": "分辨率",
+  "format": "格式",
+
+  "back": "返回",
+  "home": "首页",
+  "delete": "删除",
+  "configure": "配置",
+  "cancel": "取消",
+
+  "loadingVideos": "正在加载视频",
+  "loadingProgress": "正在加载 {current}/{total} 个视频",
+  "analyzingVideos": "正在分析视频",
+  "permissionGranted": "权限已授予",
+  "permissionsGranted": "已授予 {count} 项权限",
+  "saveDirectoryError": "无法获取保存目录",
+  "compressedVideoPathNotFound": "未找到压缩后视频的路径",
+  "compressedVideoShare": "压缩后的视频：{fileName}",
+  "compressedVideoSubject": "使用 {appName} 压缩的视频",
+  "shareError": "分享失败：{errorMessage}",
+
+  "results": "结果",
+  "spaceFreed": "已节省 {space}",
+  "videosCompressed": "已压缩 {count} 个视频",
+  "compressing": "压缩中",
+  "videoProgress": "第 {current}/{total} 个视频",
+  "backToHome": "返回首页",
+
+  "resolutionHelperText": "目标高度，保持原始宽高比。",
+  "framesPerSecond": "帧率（FPS）",
+  "waiting": "等待中…",
+  "percentCompleted": "{percent}% 已完成",
+  "completedWithSize": "{size}",
+  "unknownError": "未知错误",
+  "cancelCompression": "取消压缩",
+  "configuration": "配置",
+  "share": "分享",
+
+  "noAudio": "无音频",
+  "mirror": "镜像",
+  "square": "正方形",
+  "speedFormat": "{speed}x",
+  "fpsFormat": "{fps} FPS",
+  "replaceOriginal": "替换原文件",
+
+  "maximaCalidad": "最高质量",
+  "excelenteCalidad": "优质",
+  "buenaCalidad": "良好质量",
+  "compresionMedia": "中等压缩",
+  "ultraCompresion": "极限压缩",
+
+  "original": "原始",
+  "p1080": "1080p",
+  "p720": "720p",
+  "p480": "480p",
+  "p360": "360p",
+  "p240": "240p",
+  "p144": "144p",
+
+  "mp4": "MP4",
+  "avi": "AVI",
+  "mov": "MOV",
+  "mkv": "MKV",
+  "webm": "WebM",
+
+  "videoCodec": "视频编码",
+  "h264": "H.264 (AVC)",
+  "h265": "H.265 (HEVC)",
+
+  "selected": "{count,plural,=0{未选择}=1{已选择 1 个}other{已选择 {count} 个}}",
+  "filePickerError": "选择文件失败：{errorMessage}",
+  "permissionRequestError": "请求权限失败：{errorMessage}",
+  "permissionRequired": "需要权限",
+  "permissionDeniedMessage": "应用需要访问您的视频才能继续。请在设置中授予权限。",
+  "openSettings": "打开设置",
+  "uriResolutionFailed": "无法获取原始路径，将使用临时路径",
+
+  "resolutionScale": "输出分辨率：{percentage}%",
+  "scale10Percent": "10%",
+  "scaleOriginal": "原始",
+  "hardwareAccelerationAvailable": "可使用硬件加速",
+  "timeRemaining": "剩余 {time}"
+}
