@@ -18,11 +18,11 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
-      - name: Set up Flutter (latest stable 3.47.4, 要求 Gradle >=8.14)
+      - name: Set up Flutter (pinned 3.34.x, 作者原工具链：Gradle 8.12 / AGP 8.7.3 / Kotlin 2.1.0)
         uses: subosito/flutter-action@v2
         with:
           channel: 'stable'
-          flutter-version: '3.47.4'
+          flutter-version: '3.34.x'
           cache: true
 
       - name: Set up Android SDK
